@@ -1,11 +1,11 @@
 # Pig-Dice
 Pig-Dice Game
-> Author: Albert Oketch
+>Author: Albert Oketch
 >---
-> Project Name: Pig-Dice
+>Project Name: Pig-Dice
 >---
-## Description
-> This is a web dice game where users can role dice to get a score. One of the two players to reach 100 is the winner. It is meant to be a game for people to have fun.
+### Description
+>This is a web dice game where users can role dice to get a score. One of the two players to reach 100 is the winner. It is meant to be a game for people to have fun.
 >---
 ### Specs
 >These are some of the specs:
