@@ -15,4 +15,4 @@ Pig-Dice Game
 >---
 >You can take a look and have some fun [here](https://okwonks.github.io/pig-dice/)
 
-&&copy WillisCode | credits [Moringa School](http://moringaschool.com/).
+Ⓒ WillisCode | credits [Moringa School](http://moringaschool.com/).
