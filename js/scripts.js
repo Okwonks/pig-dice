@@ -41,5 +41,5 @@ $(document).ready(function() {
       console.log(score);
       alert(score);
 
-  })
+  })  
 }) //end of document User Interface Logic
