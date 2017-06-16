@@ -27,13 +27,19 @@ $(document).ready(function() {
 
   //here's where the game will be able to compute the values
     $("button#player-roll").click(function() {
-      var die = Math.floor(Math.random()*6 + 1);
+      var die = Math.floor(Math.random()*(6)) + 1;
     //  alert(die);
-      var countNumber = players[0].total.push(die);
-      var score = players[0].reduce(function(die, countNumber) {
-        return die + countNumber;
-        console.log(die);
+      players[0].total.push(die);
+      var score = players[0].total.reduce(function(total, countNumber) {
+        return total + countNumber;
       })
+      if (die === 1) {
+        score = die * 0;
+      } else {
+        score = players[0].total.push(die);
+      }
+      console.log(score);
+      alert(score);
 
   })
 }) //end of document User Interface Logic
