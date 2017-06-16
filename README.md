@@ -4,7 +4,7 @@ Pig-Dice Game
 >---
 >Project Name: Pig-Dice
 >---
-### Description
+## Description
 >This is a web dice game where users can role dice to get a score. One of the two players to reach 100 is the winner. It is meant to be a game for people to have fun.
 >---
 ### Specs
@@ -15,4 +15,4 @@ Pig-Dice Game
 >---
 >You can take a look and have some fun [here](https://okwonks.github.io/pig-dice/)
 
-&copy WillisCode | credits [Moringa School](http://moringaschool.com/).
+&&copy WillisCode | credits [Moringa School](http://moringaschool.com/).
