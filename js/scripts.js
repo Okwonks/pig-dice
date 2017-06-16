@@ -1,9 +1,7 @@
 //Business Logic
-var die = math.floor(math.random()*6 + 1);
-
 var players = [];
 
-function player(name) {
+function Player(name) {
   this.name = name;
   this.total = [];
 }
@@ -19,5 +17,8 @@ $(document).ready(function() {
   });
 
   //here's where the game will be able to compute the values
-  $()
+  $("button#player-roll").click(function() {
+    var die = Math.floor(Math.random()*6 + 1);
+    alert(die);
+  })
 })
