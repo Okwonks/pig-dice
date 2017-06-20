@@ -1,5 +1,12 @@
 #rules {
   float: right;
+  background-color: white;
+  padding: 2%;
+}
+
+#black-rules {
+  margin-top: 0.2em;
+  color: black;
 }
 
 #player1-roll {
@@ -8,5 +15,5 @@
 
 #player2-roll {
   padding: 2%;
-  margin-left: 25%;
+  float: right;
 }
