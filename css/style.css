@@ -1,0 +1,12 @@
+#rules {
+  float: right;
+}
+
+#player1-roll {
+  padding: 2%;
+}
+
+#player2-roll {
+  padding: 2%;
+  margin-left: 25%;
+}
