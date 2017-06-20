@@ -3,9 +3,11 @@ var players = [];
 
 function Player(name) {
   this.playerName = name;
-  this.total = [];
+  this.rollScore = [];
+  this.total = 0;
 }
 
+var holdNum = [];
 
 //User Interface Logic
 $(document).ready(function() {
@@ -28,25 +30,44 @@ $(document).ready(function() {
     players.push(newPlayerOne, newPlayerTwo);
     $("h3#player1").text(players[0].playerName);
     $("h3#player2").text(players[1].playerName);
-    $("div#player1-roll").show()
+    $("div#player1-roll").show();
+    alert("Let's begin " + players[0].playerName);
   });
 
   //here's where the game will be able to compute the values
-    $("button#player-roll").click(function() {
-      var die = Math.floor(Math.random()*(6)) + 1;
+  $("button#die1").click(function() {
+    var die = Math.floor(Math.random() * (6)) + 1;
     //  alert(die);
+    if (die === 1) {
+      $("div#player2-roll").show();
 
-      players[0].total.push(die);
-      var score = players[0].total.reduce(function(total, countNumber) {
+      holdNum = [];
+      $("h4#hold-total1").text("0");
+      alert(players[1].playerName + " your turn!")
+    } else {
+      holdNum.push(die);
+      var total = players[0].total.reduce(function(total, countNumber) {
         return total + countNumber;
-      })
-      if (die === 1) {
-        score = die * 0;
-      } else {
-        score = players[0].total.push(die);
-      }
-      console.log(score);
-      alert(score);
+      });
+      $("h4#hold-total1").text(rollScore);
+    }
+  });
+
+  $("button#hold1").click(function() {
+    var total = holdNum.reduce(function(total, countNumber) {
+      return total + countNumber;
+    })
+    players[0].rollScore.push(total);
+    var score = players[0].reduce(function(total, countNumber) {
+      return total + countNumber;
+    });
+    players[0].total = score;
+    $("h2#score1").text(score);
+
+    $("div#player1-roll").fadeOut(3000);
+    $("div#player2-roll").fadeIn(3000);
+
+    alert(players[1].playerName + " your turn!");
 
   })
 }) //end of document User Interface Logic
