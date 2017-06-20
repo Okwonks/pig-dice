@@ -31,8 +31,8 @@ $(document).ready(function() {
         $("h3#player1").text(players[0].playerName);
         $("h3#player2").text(players[1].playerName);
         $("div#player1-roll").show();
-        $("form#players").fadeOut(5000);
         alert("Let's begin " + players[0].playerName);
+        $("form#players").fadeOut(3000);
       });
 
       //here's where the game will be able to compute the values
@@ -44,17 +44,18 @@ $(document).ready(function() {
         $("h2#die-count").text(die);
 
         if (die === 1) {
-          $("div#player2-roll").show();
+          $("div#player2-roll").fadeIn();
+          $("div#player1-roll"),fadeOut();
 
           holdNum = [];
           $("h4#hold-total1").text("0");
           alert(players[1].playerName + " your turn!")
         } else {
           holdNum.push(die);
-          var total = players[0].holdNum.reduce(function(total, countNumber) {
+          var total = holdNum.reduce(function(total, countNumber) {
             return total + countNumber;
           });
-          $("h4#hold-total1").text(rollScore);
+          $("h4#hold-total1").text(total);
         }
       });
 
@@ -63,14 +64,14 @@ $(document).ready(function() {
           return total + countNumber;
         })
         players[0].rollScore.push(total);
-        var score = players[0].rollScore.duce(function(total, countNumber) {
+        var score = players[0].rollScore.reduce(function(total, countNumber) {
           return total + countNumber;
         });
         players[0].total = score;
         $("h2#score1").text(score);
 
-        $("div#player1-roll").fadeOut(3000);
         $("div#player2-roll").fadeIn(3000);
+        $("div#player1-roll").fadeOut(3000);
 
         alert(players[1].playerName + " your turn!");
 
@@ -83,6 +84,7 @@ $(document).ready(function() {
 
       });
 
+//PLAYER TWO LOGIC
       /* then we can deal with player two's code from here
       it's goig to deal with the hold and roll */
       $("button#die2").click(function() {
@@ -90,16 +92,17 @@ $(document).ready(function() {
         $("h2#die-count").text(die);
         if (die === 1) {
           $("div#player1-roll").fadeIn();
+          $("div#player2-roll").fadeOut();
 
           holdNum = [];
           $("h4#hold-total2").text("0");
-          alert(players[1].playerName + " your turn!")
+          alert(players[0].playerName + " your turn!");
         } else {
           holdNum.push(die);
-          var total = players[0].holdNum.reduce(function(total, countNumber) {
+          var total = holdNum.reduce(function(total, countNumber) {
             return total + countNumber;
           });
-          $("h4#hold-total2").text(rollScore);
+          $("h4#hold-total2").text(total);
         }
       });
 
@@ -108,7 +111,7 @@ $(document).ready(function() {
           return total + countNumber;
         })
         players[1].rollScore.push(total);
-        var score = players[1].rollScore.duce(function(total, countNumber) {
+        var score = players[1].rollScore.reduce(function(total, countNumber) {
           return total + countNumber;
         });
         players[1].total = score;
