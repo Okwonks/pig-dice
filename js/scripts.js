@@ -45,7 +45,7 @@ $(document).ready(function() {
 
         if (die === 1) {
           $("div#player2-roll").fadeIn();
-          $("div#player1-roll"),fadeOut();
+          $("div#player1-roll").fadeOut();
 
           holdNum = [];
           $("h4#hold-total1").text("0");
